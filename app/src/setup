@@ -1,0 +1,6 @@
+yarn init -y
+yarn add express
+
+create server.js
+node src/server.js
+yarn add nodemon -D
