@@ -1,3 +1,5 @@
 data/
-tmp/
+!data/.gitkeep
+app/tmp/*
+!app/tmp/.gitkeep
 app/node_modules/
