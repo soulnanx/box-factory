@@ -12,9 +12,15 @@ const File = new mongo.Schema(
     }
   },
   {
-    timestamps: true
+    timestamps: true,
+    toObject: {virtuals: true },
+    toJSON: {virtuals: true }
   }
     
-)
+);
+
+File.virtual('url').get(function (){
+  return `http://localhost:3333/files/${encodeURIComponent(this.path)}`;
+})
 
 module.exports = mongo.model("File", File)

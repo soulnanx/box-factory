@@ -1,6 +1,6 @@
 const express = require("express");
 const mongo = require('mongoose');
-
+const path = require('path');
 
 const app = express();
 
@@ -11,5 +11,6 @@ mongo.connect(mongoaddr);
 app.use(express.json())
 app.use(express.urlencoded( {extended: true }) );
 app.use(require("./routes"));
+app.use('/files', express.static(path.resolve(__dirname, '..', 'tmp')));
 
 app.listen(3333);
