@@ -19,7 +19,8 @@ app.use((req, res, next) => {
 
 app.use(cors());
 app.use(express.json());
-app.use(require("./routes"));
+app.use(require("./routes/BoxRoutes"));
+app.use(require("./routes/UserRoutes"));
 
 server.listen(3333, () => {
 console.log("Server started on port 3333!");
